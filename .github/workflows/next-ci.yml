@@ -20,5 +20,6 @@ jobs:
 
       - name: format code
         run: npm run format
+        
       - name: Build for production
         run: npm run build

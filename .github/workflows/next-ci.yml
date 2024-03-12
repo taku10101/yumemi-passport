@@ -19,7 +19,7 @@ jobs:
         run: npm run lint
 
       - name: format code
-        run: npm run format
+        run: npm run format:fix
         
       - name: Build for production
         run: npm run build

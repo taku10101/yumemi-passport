@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "eslint:fix": "next lint --fix",
+    "lint:fix": "npm run format&&npm run eslint:fix&&npm run check-types"
   },
   "dependencies": {
     "react": "^18",

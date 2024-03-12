@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-};
+const isDevelopment = process.env.NODE_ENV !== 'production'    
 
-export default nextConfig;
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true
+  },
+  assetPrefix: isDevelopment ? '' : '/sample/', //dev時は''、prod時は'/sample/'をプレフィックスに付与
+  reactStrictMode: true
+}
+
+export default nextConfig

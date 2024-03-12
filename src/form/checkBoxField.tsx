@@ -5,11 +5,9 @@ type TextFieldProps = {
   name: string;
 };
 
-export const checkBoxField: React.FC<TextFieldProps> = ({ name }) => {
-  const {
-    register,
-  } = useFormContext();
-
+export const CheckBoxField: React.FC<TextFieldProps> = (props: TextFieldProps) => {
+  const { name } = props;
+  const { register } = useFormContext();
 
   return (
     <div>
@@ -17,4 +15,3 @@ export const checkBoxField: React.FC<TextFieldProps> = ({ name }) => {
     </div>
   );
 };
-

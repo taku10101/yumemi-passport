@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, SubmitHandler, FormProvider, FieldValues, DefaultValues } from "react-hook-form";
+import { DefaultValues, FieldValues, FormProvider, SubmitHandler, useForm } from "react-hook-form";
 
 type FormContainerProps<TFormValues extends FieldValues> = {
   defaultValues: DefaultValues<TFormValues> | undefined;
@@ -7,23 +7,26 @@ type FormContainerProps<TFormValues extends FieldValues> = {
   onSubmit: SubmitHandler<TFormValues>;
 };
 
+const handleSubmit = (data: unknown) => {
+    console.log(data);
+    }
 export const formProvider = () => {
-  <TFormValues extends FieldValues>({
-    defaultValues,
-    children,
-    onSubmit,
-  }: FormContainerProps<TFormValues>) => {
-    const methods = useForm<TFormValues>({
+    <TFormValues extends FieldValues>({
       defaultValues,
-    });
-
+      children,
+      onSubmit,
+    }: FormContainerProps<TFormValues>) => {
+      const methods = useForm<TFormValues>({
+        defaultValues,
+      });
+  
     return (
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          {children}
-          <button type="submit">送信</button>
-        </form>
-      </FormProvider>
+        <FormProvider {...methods}>
+            <form onSubmit={handleSubmit}>
+                {children}
+                <button type="submit">送信</button>
+            </form>
+        </FormProvider>
     );
+    };
   };
-};

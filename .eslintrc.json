@@ -2,7 +2,7 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020,
-    "project": ["./tsconfig.eslint.json"]
+    "project": ["./tsconfig.json"]
   },
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "simple-import-sort"],

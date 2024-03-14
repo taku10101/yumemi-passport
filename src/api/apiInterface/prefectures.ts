@@ -1,5 +1,9 @@
 export interface fetchPrefectureInterface {
-  message: string | null;
+  message: string;
+  result: readonly PrefectureResultInterface[];
+}
+
+export interface PrefectureResultInterface {
   prefCode: number;
   prefName: string;
 }

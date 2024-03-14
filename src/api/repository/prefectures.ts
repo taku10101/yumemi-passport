@@ -10,8 +10,9 @@ export const fetchPrefectures = async () => {
     if (!response.ok) {
       throw new Error("APIエラー");
     }
-    const data: fetchPrefectureInterface = (await response.json()) as fetchPrefectureInterface;
-    return data;
+
+    const data = (await response.json()) as fetchPrefectureInterface;
+    return data.result;
   } catch (error) {
     console.error(error);
   }

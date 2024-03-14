@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import { PrefectureResultInterface } from "@/api/apiInterface/prefectureInterface";
 import { CheckBoxField } from "@/form/checkBoxField";
 import { prefectureContext } from "@/store/prefectureContext";
 
-export const PrefectureDataDisplay: React.FC = () => {
+export const PrefectureList: React.FC = () => {
   const prefectureData = useContext(prefectureContext);
 
   return (

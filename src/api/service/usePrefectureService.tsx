@@ -11,7 +11,7 @@ export const usePrefectures = () => {
       try {
         const response = await fetchPrefectures();
         if (!response) {
-          throw new Error("Repository Error");
+          throw new Error("Service Error");
         }
         setData(response);
       } catch (error) {

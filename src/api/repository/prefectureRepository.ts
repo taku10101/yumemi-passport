@@ -4,7 +4,7 @@ export const fetchPrefectures = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/prefectures`, {
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+        "X-API-KEY": `${process.env.NEXT_PUBLIC_API_KEY}`,
         Accept: "application/json",
       },
     });
@@ -13,6 +13,7 @@ export const fetchPrefectures = async () => {
     }
 
     const data = (await response.json()) as fetchPrefectureInterface;
+    console.log(data);
     return data.result;
   } catch (error) {
     console.error(error);

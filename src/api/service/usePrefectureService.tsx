@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { PrefectureResultInterface } from "@/api/apiInterface/prefectures";
-import { fetchPrefectures } from "@/api/repository/prefectures";
+import type { PrefectureResultInterface } from "@/api/apiInterface/prefectureInterface";
+import { fetchPrefectures } from "@/api/repository/prefectureRepository";
 
 export const usePrefectures = () => {
   const [data, setData] = useState<readonly PrefectureResultInterface[]>([]);

@@ -1,4 +1,4 @@
-import { fetchPrefectureInterface } from "@/api/apiInterface/prefectures";
+import type { fetchPrefectureInterface } from "@/api/apiInterface/prefectureInterface";
 
 export const fetchPrefectures = async () => {
   try {
